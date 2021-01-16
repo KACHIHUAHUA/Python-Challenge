@@ -60,10 +60,11 @@ with open(csvpath, "r") as csvfile:
                          
     #printing in terminal
     print(f"Total Votes: {len(candidates)}") 
-    print(list_candidates[0], round(votes_first/len(candidates)*100,3), "%", "(", votes_first, ")")
-    print(list_candidates[1], round(votes_second/len(candidates)*100,3), "%", "(", votes_second, ")")
-    print(list_candidates[2], round(votes_third/len(candidates)*100,3), "%", "(", votes_third, ")")
-    print(list_candidates[3], round(votes_fourth/len(candidates)*100,3), "%", "(", votes_fourth, ")")
+    #print(list_candidates[0], round(votes_first/len(candidates)*100,3), "%", "(", votes_first, ")")
+    print(list_candidates[0], "{:.3f}".format(votes_first/len(candidates)*100), "%", "(", votes_first, ")")
+    print(list_candidates[1], "{:.3f}".format(votes_second/len(candidates)*100,3), "%", "(", votes_second, ")")
+    print(list_candidates[2], "{:.3f}".format(votes_third/len(candidates)*100,3), "%", "(", votes_third, ")")
+    print(list_candidates[3], "{:.3f}".format(votes_fourth/len(candidates)*100,3), "%", "(", votes_fourth, ")")
     print("Winner: ", winner)
 
     #generating the output file 
@@ -74,10 +75,10 @@ with open(csvpath, "r") as csvfile:
         text.write("----------------------------------------------------------\n")
         text.write("Total Votes: " + str(len(candidates)) + "\n")
         text.write("----------------------------------------------------------\n")
-        text.write(list_candidates[0] + " : " + str(round(votes_first/len(candidates)*100,3)) + "%  (" + str(votes_first) + ")\n")
-        text.write(list_candidates[1] + " : " + str(round(votes_second/len(candidates)*100,3)) + "%  (" + str(votes_second) + ")\n")
-        text.write(list_candidates[2] + " : " + str(round(votes_third/len(candidates)*100,3)) + "%  (" + str(votes_third) + ")\n")
-        text.write(list_candidates[3] + " : " + str(round(votes_fourth/len(candidates)*100,3)) + "%  (" + str(votes_fourth) + ")\n")
+        text.write(list_candidates[0] + " : " + "{:.3f}".format(votes_first/len(candidates)*100) + "%  (" + str(votes_first) + ")\n")
+        text.write(list_candidates[1] + " : " + "{:.3f}".format(votes_second/len(candidates)*100) + "%  (" + str(votes_second) + ")\n")
+        text.write(list_candidates[2] + " : " + "{:.3f}".format(votes_third/len(candidates)*100) + "%  (" + str(votes_third) + ")\n")
+        text.write(list_candidates[3] + " : " + "{:.3f}".format(votes_fourth/len(candidates)*100) + "%  (" + str(votes_fourth) + ")\n")
         text.write("----------------------------------------------------------\n")
         text.write("Winner: " + winner + "\n")
 
